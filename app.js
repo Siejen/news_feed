@@ -2,9 +2,11 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
+app.set('view engine', 'ejs');
+
 //homepage
-app.get('/articles', function(req, res){
-  res.send('Hello World');
+app.get('/', function(req, res){
+  res.render('site/index');
 });
 
 //displays summary
@@ -32,4 +34,4 @@ app.get('/contact', function(req, res){
 	res.send('contact page');
 });
 
-app.listen(3000)
+app.listen(3000);
